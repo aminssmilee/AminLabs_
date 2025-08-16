@@ -1,4 +1,4 @@
-import banner from '../assets/un1.jpg'; // Ganti sesuai kebutuhan
+import banner from '../assets/image1.png'; // Ganti sesuai kebutuhan
 
 export default function Banner() {
   return (
