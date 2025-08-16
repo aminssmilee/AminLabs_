@@ -1,44 +1,20 @@
-import React, { useState } from "react";
-import foto from "../assets/Un1.jpg";
-import foto1 from "../assets/aminss.jpg";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-const produkList = [
-  {
-    id: 1,
-    nama: "Kaos DRY-EX",
-    harga: 199000,
-    image: foto,
-    deskripsi:
-      "Paling disukai! Kaos ringan & cepat kering untuk aktivitas harian yang aktif.",
-  },
-  {
-    id: 2,
-    nama: "Kemeja Lengan Pendek",
-    harga: 249000,
-    image: foto1,
-    deskripsi:
-      "Gaya kasual dan nyaman untuk segala cuaca. Material adem & stylish.",
-  },
-  {
-    id: 3,
-    nama: "Celana Katun Slim Fit",
-    harga: 299000,
-    image: foto,
-    deskripsi:
-      "Celana slim fit dengan bahan katun lembut. Nyaman dipakai seharian.",
-  },
-  {
-    id: 4,
-    nama: "Jaket Parka",
-    harga: 399000,
-    image: foto1,
-    deskripsi:
-      "Jaket parka tahan angin & hujan ringan. Cocok untuk cuaca tidak menentu.",
-  },
-];
+// Data manual sebagai fallback
 
 const Product = () => {
+  const [produkList, setProdukList] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/produks")
+      .then((res) => setProdukList(res.data))
+      .catch((err) => {
+        console.warn("Gagal ambil dari API, gunakan data manual.", err);
+      });
+  }, []);
 
   const handleScroll = (e) => {
     const vh = window.innerHeight;
@@ -65,26 +41,38 @@ const Product = () => {
 
       {/* Produk Section */}
       {produkList.map((produk) => {
-        const diskon = 0.95; // diskon 5%
+        const diskon = 0.95;
         const hargaDiskon = (produk.harga * diskon).toLocaleString();
         const hargaAsli = produk.harga.toLocaleString();
+
+        // Kalau image dari backend (string), tampilkan sebagai URL ke storage
+        // Kalau dari fallback (objek import), langsung tampilkan
+        const imageUrl =
+          typeof produk.image === "string"
+            ? `http://127.0.0.1:8000/storage/${produk.image}`
+            : produk.image;
 
         return (
           <section
             key={produk.id}
             className="h-screen snap-start relative flex items-center justify-center bg-gray-100"
             style={{
-              backgroundImage: `url(${produk.image})`,
+              backgroundImage: `url(${imageUrl})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
-            {/* Overlay teks kanan */}
-            <div className="absolute right-10 md:left-32 max-w-md text-white text-left drop-shadow-lg top-[55%]">
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">
+            <img
+              src={produk.image}
+              alt={produk.nama}
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+
+            <div className="absolute right-32 md:left-32 max-w-md text-white text-left drop-shadow-lg top-[55%] font-inter">
+              <h2 className="text-2xl md:text-4xl font-bold mb-2">
                 {produk.nama}
               </h2>
-              <p className="text-md md:text-lg mb-2 font-medium">
+              <p className="text-sm md:text-lg mb-2 font-medium">
                 {produk.deskripsi}
               </p>
               <div className="flex items-baseline gap-3 mb-1">

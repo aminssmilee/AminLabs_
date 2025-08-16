@@ -38,7 +38,7 @@ const Home = () => {
 
   return (
     <div
-      className="relative h-screen overflow-y-scroll snap-y snap-mandatory no-scrollbar font-amsi"
+      className="relative h-screen overflow-y-scroll snap-y snap-mandatory no-scrollbar font-inter"
       onScroll={handleScroll}
     >
       {/* Indicator bullets on right side */}
@@ -192,8 +192,8 @@ const Home = () => {
       <section className="h-screen snap-start relative flex flex-col justify-center items-center px-6 text-center overflow-hidden">
         {/* Split background */}
         <div className="absolute inset-0 flex flex-col z-0">
-          <div className="h-[70%] bg-gray-200" />
-          <div className="h-[30%] bg-white" />
+          <div className="h-[30%] bg-black" />
+          <div className="h-[70%] bg-white" />
         </div>
 
         {/* Konten kategori */}

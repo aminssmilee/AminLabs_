@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
 
 /* index.css atau App.css */
 /* src/index.css */
@@ -12,3 +11,24 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@font-face {
+  font-family: 'Utah Condensed';
+  src: url('./assets/fonts/BRUTCBC0.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Cyr';
+  src: url('./assets/fonts/HelveticaNeueCyr Roman.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* @font-face {
+  font-family: 'Helvetica Neue Cyr';
+  src: url('/src/assets/fonts/HelveticaNeueCyr-Roman.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+} */

@@ -1,22 +1,31 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
-import BottomNav from './components/BottomNav';
+import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import Product from './pages/Product';
+import TopBar from './components/TopBar';
+import Banner from './components/Banner';
+import CategoryCTA from './components/CategoryCTA';
+import Category from './components/Category'
+import LookBook from './components/LookBook';
+import Footer from './components/Footer';
+
+
 
 function App() {
   return (
-    <div className="">
-      <Navbar />
+    <div className="bg-beig">
+      {/* Top Bar */}
+      <TopBar />
+      <Navigation />
+      <Banner />
+      <CategoryCTA />
+      <Category />
+      <LookBook />
+      <Footer />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Product />} />
-      </Routes>
-
-      <BottomNav />
+      {/* <BottomNav /> */}
     </div>
   );
 }
