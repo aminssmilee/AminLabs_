@@ -56,7 +56,7 @@ export default function LookBook() {
             </div>
           </span>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-x md:divide-y-0 p-6 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:divide-x md:divide-y-0 p-6 gap-6">
           {/* Bagian kiri kosong (hilang di mobile biar tidak mengganggu) */}
           <div className="hidden md:block"></div>
 
