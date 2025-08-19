@@ -1,6 +1,5 @@
-// src/components/LookBook.jsx
 import img1 from "../assets/image1.png";
-import img2 from "../assets/image1.png"; // ganti sesuai gambar
+// import img2 from "../assets/image1.png"; // ganti sesuai gambar
 
 export default function LookBook() {
   return (
@@ -14,103 +13,83 @@ export default function LookBook() {
         </header>
 
         {/* Grid Layout: split kiri–kanan */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
-          {/* Kiri: gambar kecil + teks */}
-          <div className="flex flex-row md:flex-col justify-between h-full items-start gap-4">
-            {/* Gambar kecil */}
-            <div className="w-40 md:w-60 shrink-0">
-              <img
-                src={img1}
-                alt="Model dark coat"
-                className="w-full aspect-[3/5] object-cover"
-              />
-            </div>
+        <div className="flex flex-col lg:flex-row lg:justify-between items-center min-h-screen gap-6 p-6">
+          {/* Bagian Gambar */}
+          <span className="block">
+            <img
+              src={img1}
+              alt="Foto contoh"
+              className="w-[400px] h-[600px] md:w-[700px] md:h-[900px] object-cover"
+            />
+          </span>
 
-            {/* Text (mobile: kanan gambar, desktop: bawah gambar) */}
-            <div className="text-sm text-stone-600 leading-relaxed md:mt-6 tracking-tight">
-              <p>
-                The Spring 24 collection is composed of two chapters: Garde-Robe
-                Balenciaga’s line of refined wardrobe essentials and seasonal
-                ready-to-wear components.
+          {/* Bagian Teks */}
+          <span className="flex flex-col lg:flex-row justify-between w-full lg:w-[800px] h-auto lg:h-[900px]">
+            {/* Bagian Kiri (40%) */}
+            <div className="lg:basis-2/5 lg:pr-2 mb-4 lg:mb-0 overflow-y-auto">
+              <p className="text-sm leading-relaxed break-words text-justify">
+                Where does it come from?
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
               </p>
-            </div>
-          </div>
-
-          {/* Kanan: gambar besar potret + teks kanan */}
-          <div className="flex justify-between items-start">
-            {/* Teks di kanan (top align) */}
-            <div className="text-sm text-stone-600 leading-relaxed md:mt-6 tracking-tight">
-              <p>
-                dkjhf — ini teks di sisi kanan gambar (posisi atas).
+              <p className="text-sm leading-relaxed break-words mt-2">
+                Tambahan text ke bawah biar terlihat lebih panjang.
+              </p>
+              <p className="text-sm leading-relaxed break-words mt-2">
+                Contoh paragraf lain yang turun ke bawah.
               </p>
             </div>
 
-            {/* Gambar di kiri */}
-            <div className="w-full md:w-96">
-              <img
-                src={img2}
-                alt="Model by balcony"
-                className="w-full aspect-[3/5] object-cover border border-dark"
-              />
-            </div>
-          </div>
-        </section>
-      </div>
-      <div className="bg-beig">
-        <div className="px-4 mx-auto">
-          {/* Layout grid hanya aktif di md ke atas */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-min">
-            {/* Third Row - Large horizontal image */}
-            <div className="col-span-1 md:col-span-8">
+            {/* Bagian Kanan (60%) */}
+            <div className="lg:basis-3/5 lg:pl-2 flex flex-col justify-start">
+              {/* Foto */}
               <img
                 src={img1}
-                alt="Model with sunglasses"
-                className="w-full h-auto object-cover"
+                alt="contoh"
+                className="w-full h-60 lg:h-[500px] object-cover mb-2"
               />
+              {/* Text di bawah foto */}
+              <div className="break-words leading-snug text-justify md:pr-24">
+                <p>Where does it come from?Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32</p>
+              </div>
             </div>
+          </span>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-x md:divide-y-0 p-6 gap-6">
+          {/* Bagian kiri kosong (hilang di mobile biar tidak mengganggu) */}
+          <div className="hidden md:block"></div>
 
-            <div className="col-span-1 md:col-span-4 flex flex-col gap-6">
-              <p className="text-xs text-stone-600 leading-relaxed">
-                Bold lines, clean cuts, and a monochromatic palette define this
-                collection. Each piece is carefully crafted to embody modern
-                sophistication.
-              </p>
-              <img
-                src={img1}
-                alt="Model in light coat"
-                className="w-full h-auto object-cover"
-              />
-            </div>
+          {/* Bagian tengah gambar */}
+          <div className="flex flex-col justify-center order-1 md:order-none">
+            <p className="mb-4 text-justify">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi minima
+              deleniti voluptas ratione porro sit exercitationem sunt amet ex. Soluta
+              aperiam animi porro, molestias fugit voluptatum unde facilis eius
+              laboriosam.
+            </p>
+            <img
+              src={img1}
+              alt="Gambar"
+              className="w-[300px] h-[400px] object-cover right"
+            />
           </div>
-          <div className="grid grid-cols-4 gap-4 p-4 bg-beig">
-            {/* Kolom 1 (kosong tapi ada warna) */}
-            <div className="bg-beig flex items-center justify-center">
-              {/* Bisa tambahkan teks placeholder kalau mau */}
-            </div>
 
-            {/* Kolom 2 (gambar) */}
-            <div>
-              <img src={img1} alt="Gambar 1" className="w-full h-full object-cover" />
-            </div>
-
-            {/* Kolom 3 (gambar) */}
-            <div>
-              <img src={img2} alt="Gambar 2" className="w-full h-full object-cover" />
-            </div>
-
-            {/* Kolom 4 (kosong tapi ada warna) */}
-            <div className="bg-gray-beig flex items-center justify-center">
-            </div>
-          </div>
-          <div
-            className="text-white text-center p-4 flex flex-col h-96 items-center bg-cover bg-center"
-            style={{ backgroundImage: `url(${img1})` }}
-          >
-            <div className="bg-black/50 p-6 rounded-lg">
-            </div>
+          {/* Bagian kanan tulisan */}
+          <div className="">
+            <h2 className="text-lg font-bold mb-2">Judul Konten</h2>
+            <p className="text-sm leading-relaxed">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto minus
+              beatae modi, id reprehenderit tenetur odio nisi eveniet fugiat.
+            </p>
           </div>
         </div>
+
+
+
+
       </div>
+
 
     </>
   );

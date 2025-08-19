@@ -42,9 +42,9 @@ export default function Footer() {
                 <li>CAREERS</li>
                 <li>CAREERS - DESIGN</li>
                 <li>LEGAL</li>
-                <li>PRIVACY POLICY</li>
+                <li>PRIVACY POLICY</li> 
                 <li>COOKIES</li>
-              </ul>
+              </ul> 
             </div>
 
             {/* Column 4 */}
@@ -52,10 +52,10 @@ export default function Footer() {
               <h3 className="font-bold mb-4">CONTACT US</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  CALL US AT <br /> +44 20 33 18 60 32
+                  CALL US AT <br /> +62 831 1124 7317
                 </li>
                 <li>
-                  <a href="mailto:info@raiment.com" className="underline">
+                  <a href="mailto:salisahmad48@gmail.com" className="underline">
                     SEND US AN EMAIL
                   </a>
                 </li>
