@@ -36,7 +36,7 @@ export default function Banner() {
 
 
       {/* Button */}
-      <div className="absolute bottom-56 md:bottom-20 right-0 left-0 md:right-20 md:left-auto flex justify-center md:justify-end">
+      <div className="absolute bottom-40 md:bottom-20 right-0 left-0 md:right-20 md:left-auto flex justify-center md:justify-end">
         <button className="bg-beig text-2xl w-80 md:w-auto text-dark px-6 md:px-36 py-1 md:py-3  hover:bg-opacity-80 transition">
           SHOP NOW
         </button>
