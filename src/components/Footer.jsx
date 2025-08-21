@@ -11,7 +11,7 @@ export default function Footer() {
           </div>
 
           {/* Grid Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-4 border border-dark font-helvetica tracking-tight divide-y md:divide-y-0 md:divide-x divide-dark mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 border-y border-dark font-helvetica tracking-tight divide-y md:divide-y-0 md:divide-x divide-dark mt-8">
             {/* Column 1 */}
             <div className="p-6">
               <h3 className="font-bold mb-4">CLIENT SERVICES</h3>

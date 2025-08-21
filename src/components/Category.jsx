@@ -6,7 +6,7 @@ import img4 from "../assets/image1.png"; // pastikan path benar
 
 export default function App() {
     const menuItems = [
-        { link: "#lomba1", text: "CLOTHES", image: img1 },
+        { link: "/catalog/clothes", text: "CLOTHES", image: img1 },
         { link: "#lomba1", text: "SHOES", image: img2 },
         { link: "#lomba1", text: "BAGS", image: img3 },
         { link: "#lomba1", text: "ACCESSORIES", image: img4 },
