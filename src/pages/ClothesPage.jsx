@@ -18,6 +18,7 @@ export default function Clothes() {
 
   ];
 
+
   return (
     <>
       <div className="bg-beig">
@@ -52,7 +53,7 @@ export default function Clothes() {
               {products.map((product) => (
                 <div
                   key={product.id}
-                  className="text-center border-r border-b border-dark"
+                  className="text-center border-r border-dark"
                 >
                   <img
                     src={product.image}
@@ -67,6 +68,21 @@ export default function Clothes() {
               ))}
             </div>
           </div>
+          <div className="flex justify-between items-center border-y border-dark px-6 py-3">
+            {/* Pagination (tampilan saja) */}
+            <div className="flex items-center gap-2">
+              <button className="px-2 py-1 border rounded opacity-50">&lt;</button>
+              <button className="px-2 py-1 border rounded bg-dark text-white">1</button>
+              <button className="px-2 py-1 border rounded">2</button>
+              <button className="px-2 py-1 border rounded">3</button>
+              <button className="px-2 py-1 border rounded">4</button>
+              <button className="px-2 py-1 border rounded opacity-50">&gt;</button>
+            </div>
+
+            {/* Load More (tampilan saja) */}
+            <button className="text-sm underline">load more</button>
+          </div>
+
         </div>
 
         <Footer />
