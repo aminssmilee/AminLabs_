@@ -45,7 +45,7 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-dark px-6 py-4 flex flex-col gap-4 text-black">
+        <div className="md:hidden bg-beig border-t border-dark px-6 py-4 flex flex-col gap-4 text-black">
           <button className="flex items-center gap-2 hover:opacity-70">
             <FaSearch /> Search
           </button>
