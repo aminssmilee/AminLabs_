@@ -32,3 +32,7 @@
   font-weight: 400;
   font-style: normal;
 } */
+
+.slick-dots {
+  @apply static mt-2 flex justify-center;
+}

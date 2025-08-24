@@ -21,7 +21,7 @@ export default function Clothes() {
 
   return (
     <>
-      <div className="bg-beig">
+      <div className="bg-beig font-helvetica">
         <TopBar />
         <Navigation />
         <div className="bg-beig min-h-screen py-10">
@@ -55,11 +55,19 @@ export default function Clothes() {
                   key={product.id}
                   className="text-center border-r border-dark"
                 >
-                  <img
+                  <Link to={`/product/${product.id}`}>
+                    <img
+                      className="w-full h-[350px] object-cover"
+                      src={product.image}
+                      alt={product.name}
+                    />
+                    <h2>{product.name}</h2>
+                  </Link>
+
+                  {/* <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-[350px] object-cover"
-                  />
+                  /> */}
                   <div className="flex justify-between items-center border-t border-dark px-2 py-2 text-sm">
                     <span>{product.name}</span>
                     <span className="font-semibold">{product.price} $</span>
