@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaSearch, FaHeart, FaShoppingCart, FaUser, FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,21 +15,25 @@ export default function Navigation() {
         </button>
 
         {/* Center: Brand Name */}
-        <h1 className="text-[32px] md:text-[40px] font-bold tracking-wider">
+        <Link to="/" className="text-[32px] md:text-[40px] font-bold tracking-wider">
           AMINLABS
-        </h1>
+        </Link>
 
         {/* Right: Icons */}
         <div className="flex items-center gap-5">
-          <button className="hover:opacity-70 hidden md:flex">
+          {/* Cart */}
+          <Link to="/cart" className="hover:opacity-70 hidden md:flex">
             <FaShoppingCart className="text-black text-lg" />
-          </button>
-          <button className="hover:opacity-70 hidden md:flex">
+          </Link>
+          {/* Wishlist */}
+          <Link to="/wishlist" className="hover:opacity-70 hidden md:flex">
             <FaHeart className="text-black text-lg" />
-          </button>
-          <button className="hover:opacity-70 hidden md:flex">
+          </Link>
+          {/* Account */}
+          <Link to="/account" className="hover:opacity-70 hidden md:flex">
             <FaUser className="text-black text-lg" />
-          </button>
+          </Link>
+
           {/* Hamburger (mobile) */}
           <button
             className="hover:opacity-70 md:hidden"
@@ -49,15 +54,27 @@ export default function Navigation() {
           <button className="flex items-center gap-2 hover:opacity-70">
             <FaSearch /> Search
           </button>
-          <button className="flex items-center gap-2 hover:opacity-70">
+          <Link
+            to="/cart"
+            className="flex items-center gap-2 hover:opacity-70"
+            onClick={() => setIsOpen(false)}
+          >
             <FaShoppingCart /> Cart
-          </button>
-          <button className="flex items-center gap-2 hover:opacity-70">
+          </Link>
+          <Link
+            to="/wishlist"
+            className="flex items-center gap-2 hover:opacity-70"
+            onClick={() => setIsOpen(false)}
+          >
             <FaHeart /> Wishlist
-          </button>
-          <button className="flex items-center gap-2 hover:opacity-70">
+          </Link>
+          <Link
+            to="/account"
+            className="flex items-center gap-2 hover:opacity-70"
+            onClick={() => setIsOpen(false)}
+          >
             <FaUser /> Account
-          </button>
+          </Link>
         </div>
       )}
     </nav>
