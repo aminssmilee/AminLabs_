@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import TopBar from "../components/TopBar";
 import Navigation from "../components/Navigation";
 import ImageSlider from "../components/ProductImageSlider";
+import OtherGoods from "../components/OtherGoods";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -36,7 +37,7 @@ export default function ProductDetailPage() {
             name: "White Shirt",
             price: 300,
             description: "Kemeja putih formal dengan bahan katun lembut.",
-            image: "https://via.placeholder.com/400x400.png?text=White+Shirt",
+            image: p1,
             sizes: ["M", "L", "XL"],
         },
     ];
@@ -162,6 +163,7 @@ export default function ProductDetailPage() {
                         </p>
                     </div>
                 </div>
+                <OtherGoods products={products} currentId={product.id} />
                 <Footer />
             </div>
         </>

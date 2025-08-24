@@ -34,5 +34,25 @@
 } */
 
 .slick-dots {
-  @apply static mt-2 flex justify-center;
+  @apply static flex justify-center;
 }
+
+/* Perbesar ukuran dot */
+/* Atur jarak antar dot */
+.slick-dots li {
+  margin: 0px -4px; /* default biasanya 5px, kecilkan jadi 2px biar rapat */
+}
+
+/* Sesuaikan ukuran dot */
+.slick-dots li button:before {
+  font-size: 10px; /* perbesar dot */
+  color: #292929;
+}
+
+/* Dot aktif */
+.slick-dots li.slick-active button:before {
+  color: #292929;
+}
+
+
+
